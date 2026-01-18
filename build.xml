@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ProductSwingApp" default="run" basedir=".">
+    <property name="src" value="src"/>
+    <property name="build" value="build"/>
+    <property name="dist" value="dist"/>
+
+    <target name="init">
+        <mkdir dir="${build}"/>
+        <mkdir dir="${dist}"/>
+    </target>
+
+    <target name="compile" depends="init">
+        <javac srcdir="${src}" destdir="${build}" includeantruntime="false">
+            <classpath>
+                <pathelement location="${build}"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="jar" depends="compile">
+        <jar destfile="${dist}/ProductSwingApp.jar" basedir="${build}">
+            <manifest>
+                <attribute name="Main-Class" value="src.ui.MainJFrame"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run" depends="jar">
+        <java jar="${dist}/ProductSwingApp.jar" fork="true"/>
+    </target>
+
+    <target name="clean">
+        <delete dir="${build}"/>
+        <delete dir="${dist}"/>
+    </target>
+</project>
