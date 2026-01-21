@@ -48,7 +48,7 @@ public class Address {
         this.zipCode = zipCode;
     }
 
-    // 重写toString，方便展示
+    // Object类的toString方法
     @Override
     public String toString() {
         return "Street: " + streetName + "\n" +
@@ -56,4 +56,5 @@ public class Address {
                 "City: " + city + "\n" +
                 "ZIP Code: " + zipCode;
     }
+
 }
