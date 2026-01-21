@@ -69,7 +69,7 @@ public class Product {
         this.shippingAddress = shippingAddress;
     }
 
-    // 重写toString，方便展示产品详情
+    // 写toString，方便展示产品详情
     @Override
     public String toString() {
         return "=== Product Details ===\n" +
@@ -80,4 +80,5 @@ public class Product {
                 "--- Manufacture Address ---\n" + manufactureAddress + "\n\n" +
                 "--- Shipping Address ---\n" + shippingAddress;
     }
+
 }
